@@ -1,53 +1,56 @@
 $(document).ready(function () {
 
-const APIKey = "5d58d4ccc7c5f83796092c17fcb30ae8";
+    const APIKey = "5d58d4ccc7c5f83796092c17fcb30ae8";
 
-const cityEl = $("h2#city");
-const dateEl = $("h3#date");
-const cityInput = $("#city-input");
+    const cityEl = $("h2#city");
+    const dateEl = $("h3#date");
+    const cityInput = $("#city-input");
 
-let pastCities = [];
+    let pastCities = [];
 
-function compare(a, b) {
-    const cityA = a.city.toUpperCase();
-    const cityB = b.city.toUpperCase();
+    function compare(a, b) {
+        const cityA = a.city.toUpperCase();
+        const cityB = b.city.toUpperCase();
 
-    let comparison = 0;
-    if (cityA > cityB) {
-        comparison = 1;
-    } else if (cityA < cityB) {
-        comparison = -1;
+        let comparison = 0;
+        if (cityA > cityB) {
+            comparison = 1;
+        } else if (cityA < cityB) {
+            comparison = -1;
+        }
+        return comparison;
     }
-    return comparison;
-}
 
-function buildURLFromInputs(city) {
-    if (city) {
-        return "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}";
+    function buildURLFromInputs(city) {
+        if (city) {
+            return "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}";
+        }
     }
-}
 
-function buildURLFromId(id) {
-    return "https://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${APIKey}";
-}
-
-function loadCities() {
-    const storedCities = JSON.parse(localStorage.getItem("pastCities"));
-    if (storedCities) {
-        pastCities = storedCities;
+    function buildURLFromId(id) {
+        return "https://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${APIKey}";
     }
-}
 
-function storeCities() {
-    localStorage.setItem("pastCities", JSON.stringify(pastCities));
-}
+    function loadCities() {
+        const storedCities = JSON.parse(localStorage.getItem("pastCities"));
+        if (storedCities) {
+            pastCities = storedCities;
+        }
+    }
 
-function searchWeather(queryURL) {
+    function storeCities() {
+        localStorage.setItem("pastCities", JSON.stringify(pastCities));
+    }
 
-    $.ajax({
-        url: queryURL,
-        method: 'GET'
-    }).then(function (response)
+    // function searchWeather(queryURL) {
+
+    //     $.ajax({
+    //         url: queryURL,
+    //         method: 'GET'
+    //     }).then(function (response)
+    // }
+
+});
 
 
 
