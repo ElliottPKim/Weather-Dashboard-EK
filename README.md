@@ -1,13 +1,21 @@
 # Weather-Dashboard-EK
 
-**Link**
+# Links
 
 https://elliottpkim.github.io/Weather-Dashboard-EK/
 
-Attempted to make a Weather Dashboard to be able to search up any city and get its weather information using an API.
+# Description
 
-Was unable to figure out how to make the API run to get information will study on it to resubmit.
-Search bar is also unfinished but I believe my local storage should work.
+Weather dashboard app using API. Type in city of choice to search bar to see weather for upcoming 5 days.
 
+# User Story 
+
+<code>
+AS A traveler
+I WANT to see the weather outlook for multiple cities
+SO THAT I can plan a trip accordingly
+</code>
+
+# Screenshots
 
 ![SS of webpage](assets/images/screenshot.png)
